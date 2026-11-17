@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arsh Nehal — Young Coder</title>
+<meta name="description" content="Portfolio of Arsh Nehal, a young coder building web apps, tools and extensions.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%232f4bff'/%3E%3Ccircle cx='50' cy='14' r='7' fill='%23ff5a36'/%3E%3Ctext x='30' y='47' font-family='Arial Black,Arial' font-weight='900' font-size='38' text-anchor='middle' fill='%23fff'%3EA%3C/text%3E%3C/svg%3E">
+<style>
+:root{--bg:#f5f1ea;--ink:#12121a;--blue:#2f4bff;--orange:#ff5a36;--lime:#c6f432;--pink:#ff9ecb;--card:#fff;--muted:#5d5d6b;--ease:cubic-bezier(.2,.8,.2,1);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;overflow-x:hidden;line-height:1.6}
+::selection{background:var(--lime);color:var(--ink)}
+#pre{position:fixed;inset:0;background:var(--blue);z-index:999;display:grid;place-items:center;transition:clip-path 1s var(--ease);clip-path:circle(150% at 50% 50%)}
+#pre b{font-size:clamp(3rem,12vw,7rem);color:#fff;font-weight:900;animation:bounce .7s ease-in-out infinite alternate}
+#pre.go{clip-path:circle(0% at 50% 50%)}
+@keyframes bounce{to{transform:translateY(-24px) rotate(-6deg)}}
+.blobs{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.blobs i{position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;animation:drift 14s ease-in-out infinite alternate}
+.blobs i:nth-child(1){width:42vw;height:42vw;background:var(--blue);opacity:.28;left:-8vw;top:-8vw}
+.blobs i:nth-child(2){width:34vw;height:34vw;background:var(--orange);opacity:.3;right:-6vw;top:25vh;animation-duration:18s}
+.blobs i:nth-child(3){width:30vw;height:30vw;background:var(--lime);right:30vw;bottom:-10vw;animation-duration:16s}
+.blobs i:nth-child(4){width:22vw;height:22vw;background:var(--pink);left:12vw;bottom:10vh;animation-duration:20s}
+@keyframes drift{to{transform:translate(10vw,8vh) scale(1.25) rotate(40deg)}}
+#bar{position:fixed;top:0;left:0;height:5px;width:0;background:linear-gradient(90deg,var(--blue),var(--orange),var(--lime));z-index:100}
+#goo{position:fixed;inset:0;pointer-events:none;z-index:200;filter:url(#gooey)}
+#goo i{position:absolute;left:0;top:0;border-radius:50%;background:var(--blue);will-change:transform}
+@media(hover:none){#goo{display:none}}
+.conf{position:fixed;width:10px;height:10px;z-index:300;pointer-events:none;border-radius:2px}
+nav{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);left:50%;transform:translateX(-50%);display:flex;gap:6px;padding:8px;border-radius:60px;background:rgba(255,255,255,.75);backdrop-filter:blur(14px);border:2px solid var(--ink);z-index:50;box-shadow:4px 4px 0 var(--ink)}
+nav a{color:var(--ink);text-decoration:none;font-weight:700;font-size:.85rem;padding:8px 16px;border-radius:40px;transition:background .3s,color .3s,transform .3s}
+nav a:hover{background:var(--ink);color:var(--lime);transform:scale(1.08)}
+section{padding:130px 6vw 40px;max-width:1180px;margin:auto}
+#hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;position:relative}
+.chip{display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:var(--lime);border:2px solid var(--ink);padding:8px 18px;border-radius:40px;font-weight:700;font-size:.85rem;box-shadow:3px 3px 0 var(--ink);animation:wob 3s ease-in-out infinite}
+.chip u{width:10px;height:10px;border-radius:50%;background:var(--orange);animation:ping 1.2s infinite}
+@keyframes ping{50%{transform:scale(1.8);opacity:.3}}
+@keyframes wob{50%{transform:rotate(-3deg) translateY(-4px)}}
+h1{font-size:clamp(3.4rem,13vw,10rem);line-height:.92;margin:.2em 0;font-weight:900;letter-spacing:-.04em}
+h1 .w{display:inline-block;overflow:hidden;padding:0 .05em .12em}
+h1 .ch{display:inline-block;transform:translateY(115%) rotate(12deg);animation:up .8s var(--ease) forwards;animation-delay:calc(1s + var(--i)*.06s);transition:transform .3s,color .3s}
+h1 .ch:hover{transform:translateY(-14px) rotate(-8deg) scale(1.15)!important;color:var(--orange)}
+h1 .g .ch{color:var(--blue);-webkit-text-stroke:0}
+@keyframes up{to{transform:none}}
+.type{font-size:clamp(1.2rem,3vw,2rem);font-weight:700;min-height:1.6em;opacity:0;animation:fade .8s 2s forwards}
+.type span{background:linear-gradient(90deg,var(--blue),var(--orange));-webkit-background-clip:text;background-clip:text;color:transparent}
+.cursor{display:inline-block;width:4px;height:1em;background:var(--ink);margin-left:4px;vertical-align:middle;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}@keyframes fade{to{opacity:1}}
+.btns{margin-top:30px;display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:fade .8s 2.3s forwards}
+.btn{padding:16px 32px;border-radius:60px;text-decoration:none;font-weight:800;border:2px solid var(--ink);box-shadow:5px 5px 0 var(--ink);display:inline-block;transition:box-shadow .2s,transform .2s,background .3s}
+.btn.p{background:var(--blue);color:#fff}
+.btn.s{background:var(--card);color:var(--ink)}
+.btn:hover{box-shadow:8px 8px 0 var(--ink);background:var(--orange);color:#fff}
+.btn:active{box-shadow:0 0 0 var(--ink)}
+.badge{position:absolute;right:5vw;top:26%;width:min(190px,30vw);aspect-ratio:1;animation:spin 14s linear infinite}
+.badge svg{width:100%;height:100%}
+.badge text{font-size:11.5px;font-weight:800;letter-spacing:.2em;fill:var(--ink)}
+.badge b{position:absolute;inset:0;display:grid;place-items:center;font-size:3rem;animation:spin 14s linear infinite reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.fl{position:absolute;font-size:2.4rem;animation:fl 5s ease-in-out infinite;pointer-events:none}
+@keyframes fl{50%{transform:translateY(-30px) rotate(20deg)}}
+.tick{overflow:hidden;white-space:nowrap;background:var(--ink);color:var(--lime);padding:16px 0;transform:rotate(-1.5deg);margin:50px -4vw;font-weight:900;font-size:1.5rem}
+.tick div{display:inline-block;animation:mq 20s linear infinite}
+.tick span{margin:0 22px}
+@keyframes mq{to{transform:translateX(-50%)}}
+h2{font-size:clamp(2.2rem,6vw,4.2rem);margin:0 0 36px;font-weight:900;letter-spacing:-.03em;line-height:1}
+h2 mark{background:var(--lime);padding:0 .15em;border-radius:10px;display:inline-block;transform:rotate(-2deg)}
+.lead{max-width:720px;color:var(--muted);font-size:1.2rem}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;margin-top:40px}
+.stat{padding:26px;border:2px solid var(--ink);border-radius:22px;box-shadow:5px 5px 0 var(--ink);transition:transform .3s var(--ease)}
+.stat:nth-child(1){background:var(--lime)}.stat:nth-child(2){background:var(--pink)}.stat:nth-child(3){background:#9db3ff}.stat:nth-child(4){background:#ffc29b}
+.stat:hover{transform:translate(-4px,-6px) rotate(-2deg)}
+.stat b{display:block;font-size:3.2rem;font-weight:900;line-height:1}
+.stat span{font-weight:700;font-size:.85rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:26px}
+.card{background:var(--card);border:2px solid var(--ink);border-radius:24px;padding:28px;box-shadow:6px 6px 0 var(--ink);position:relative;overflow:hidden;transition:transform .25s ease-out,box-shadow .3s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--x,50%) var(--y,0%),var(--c,rgba(47,75,255,.18)),transparent 60%);opacity:0;transition:opacity .3s}
+.card:hover{box-shadow:12px 12px 0 var(--ink)}.card:hover::before{opacity:1}
+.card:nth-child(4n+1){--c:rgba(198,244,50,.6)}.card:nth-child(4n+2){--c:rgba(255,158,203,.6)}.card:nth-child(4n+3){--c:rgba(255,90,54,.35)}
+.ic{width:60px;height:60px;display:inline-block;transition:transform .5s var(--ease)}
+.k{fill:none;stroke:#12121a;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+.badge b svg{width:42%;height:42%}
+.fl svg{width:46px;height:46px}
+.card:hover .ic{transform:scale(1.3) rotate(-12deg)}
+.num{position:absolute;right:20px;top:8px;font-size:4rem;font-weight:900;color:rgba(18,18,26,.07)}
+.card h3{margin:.4em 0 .2em;font-size:1.5rem;font-weight:900}
+.card p{color:var(--muted);font-size:.95rem;margin:.3em 0 1.1em}
+.tag{display:inline-block;font-size:.72rem;font-weight:800;padding:4px 12px;border-radius:20px;border:2px solid var(--ink);background:var(--bg);margin:0 6px 6px 0}
+.card a{color:var(--blue);text-decoration:none;font-weight:800;margin-right:16px;font-size:.9rem;position:relative}
+.card a::after{content:"";position:absolute;left:0;bottom:-2px;height:3px;width:100%;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.card a:hover::after{transform:scaleX(1)}
+.pills{display:flex;flex-wrap:wrap;gap:14px}
+.pills span{padding:14px 26px;border:2px solid var(--ink);border-radius:60px;font-weight:800;font-size:1.1rem;box-shadow:4px 4px 0 var(--ink);background:var(--card);animation:bob 3s ease-in-out infinite;animation-delay:calc(var(--d)*.3s);transition:background .3s,transform .3s}
+.pills span:hover{background:var(--lime);transform:scale(1.12) rotate(-4deg)}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.links{display:flex;flex-wrap:wrap;gap:18px}
+.links a{padding:20px 38px;border-radius:60px;border:2px solid var(--ink);background:var(--card);color:var(--ink);font-weight:900;font-size:1.15rem;text-decoration:none;box-shadow:5px 5px 0 var(--ink);transition:background .3s,color .3s,box-shadow .2s}
+.links a:nth-child(1):hover{background:var(--ink);color:#fff}.links a:nth-child(2):hover{background:var(--blue);color:#fff}.links a:nth-child(3):hover{background:var(--orange);color:#fff}.links a:nth-child(4):hover{background:var(--lime)}.links a:nth-child(5):hover{background:var(--pink)}
+.links a{display:inline-flex;align-items:center;gap:12px}
+.links svg{width:28px;height:28px;flex:none;transition:transform .4s var(--ease)}
+.links a:hover svg{transform:rotate(-12deg) scale(1.2)}
+.links a:hover{box-shadow:9px 9px 0 var(--ink)}
+footer{text-align:center;padding:70px 20px 50px;font-weight:800}
+.rv{opacity:0;transform:translateY(60px) scale(.96) rotate(1deg);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.on{opacity:1;transform:none}
+@media(max-width:700px){nav a:not(:last-child){display:none}nav a:last-child{display:block}.badge,.fl{display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,h1 .ch,.type,.btns{opacity:1;transform:none}#pre{display:none}}
+</style>
+</head>
+<body>
+<div id="pre"><b>A.</b></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="gooey"><feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b"/><feColorMatrix in="b" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 22 -9"/></filter></defs></svg>
+<div id="goo"></div>
+<div class="blobs"><i></i><i></i><i></i><i></i></div><div id="bar"></div>
+<nav><a href="#about">About</a><a href="#projects">Work</a><a href="#skills">Skills</a><a href="#contact">Say hi</a></nav>
+
+<section id="hero">
+  <div class="chip"><u></u>Open to cool projects</div>
+  <h1 id="name" aria-label="Arsh Nehal"><span class="w">Arsh</span><br><span class="w g">Nehal</span></h1>
+  <div class="type"><span id="t"></span><i class="cursor"></i></div>
+  <div class="btns"><a class="btn p mag" href="#projects">See my work →</a><a class="btn s mag" href="https://github.com/ArshNehal" target="_blank" rel="noopener">GitHub ↗</a></div>
+  <div class="badge"><svg viewBox="0 0 100 100"><defs><path id="c" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text><textPath href="#c">CODE • CREATE • REPEAT • </textPath></text></svg><b><svg class="k" viewBox="0 0 48 48"><path d="M27 3L9 27h13l-3 18 20-26H26z" fill="#c6f432"/></svg></b></div>
+  <span class="fl" style="left:48%;top:18%"><svg class="k" viewBox="0 0 48 48"><path d="M24 4l4 14 14 6-14 6-4 14-4-14-14-6 14-6z" fill="#ffd23f"/></svg></span><span class="fl" style="left:62%;bottom:16%;animation-delay:1s"><svg class="k" viewBox="0 0 48 48"><path d="M24 4c8 6 10 15 8 26H16C14 19 16 10 24 4z" fill="#fff"/><circle cx="24" cy="18" r="4" fill="#2f4bff"/><path d="M16 24l-7 8 7-1M32 24l7 8-7-1" fill="#ff5a36"/><path d="M20 36l4 8 4-8" fill="#ffd23f"/></svg></span><span class="fl" style="left:8%;bottom:10%;animation-delay:2s"><svg class="k" viewBox="0 0 48 48"><path d="M24 5a14 14 0 0 0-8 25v5h16v-5A14 14 0 0 0 24 5z" fill="#ffd23f"/><path d="M18 40h12M20 44h8"/></svg></span>
+</section>
+
+<div class="tick"><div><span>PYTHON ✦</span><span>AI &amp; APIS ✦</span><span>JAVASCRIPT ✦</span><span>FULL-STACK UI ✦</span><span>COMPUTER VISION ✦</span><span>PDF TOOLS ✦</span><span>PYTHON ✦</span><span>AI &amp; APIS ✦</span><span>JAVASCRIPT ✦</span><span>FULL-STACK UI ✦</span><span>COMPUTER VISION ✦</span><span>PDF TOOLS ✦</span></div></div>
+
+<section id="about" class="rv">
+  <h2>Code, curiosity <mark>&amp; craft.</mark></h2>
+  <p class="lead">I’m a young coder from India who loves turning ideas into things people can click, type and play with. I build full web apps in HTML, CSS and JavaScript, write Python tools, and experiment with AI. My work ranges from a PDF editor and a social app to a computer vision platform.</p>
+  <div class="stats">
+    <div class="stat"><b data-n="17">0</b><span>Public repos</span></div>
+    <div class="stat"><b data-n="30">0</b><span>Stars given</span></div>
+    <div class="stat"><b data-n="8">0</b><span>Featured builds</span></div>
+    <div class="stat"><b data-n="100" data-s="%">0</b><span>Curiosity</span></div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2 class="rv">Advanced <mark>projects.</mark></h2>
+  <div class="grid">
+    <div class="card rv"><span class="num">01</span><svg class="ic k" viewBox="0 0 48 48"><circle cx="24" cy="24" r="20" fill="#c6f432"/><path d="M37 19a14 14 0 0 0-25-4M11 29a14 14 0 0 0 25 4"/><path d="M11 6v9h9M37 42v-9h-9"/></svg><h3>SYNC</h3><p>My flagship build, and the project I put the most work into.</p><span class="tag">Flagship</span><span class="tag">Full project</span><br><a href="https://github.com/ArshNehal" target="_blank" rel="noopener">See on GitHub ↗</a></div>
+    <div class="card rv"><span class="num">02</span><svg class="ic k" viewBox="0 0 48 48"><path d="M3 24C10 12 38 12 45 24 38 36 10 36 3 24z" fill="#fff"/><circle cx="24" cy="24" r="8" fill="#2f4bff"/><circle cx="24" cy="24" r="3" fill="#12121a"/></svg><h3>VisionAI</h3><p>An AI-powered computer vision platform that helps computers understand images.</p><span class="tag">AI</span><span class="tag">Computer Vision</span><br><a href="https://github.com/ArshNehal/VisionAI" target="_blank" rel="noopener">Code ↗</a></div>
+    <div class="card rv"><span class="num">03</span><svg class="ic k" viewBox="0 0 48 48"><rect x="5" y="8" width="38" height="32" rx="8" fill="#ff9ecb"/><path d="M10 25h8l3-9 6 18 3-9h8"/></svg><h3>Pulse</h3><p>A social media web app built as a single-file HTML, CSS and JavaScript project with a clean, simple interface.</p><span class="tag">Social</span><span class="tag">Vanilla JS</span><br></div>
+    <div class="card rv"><span class="num">04</span><svg class="ic k" viewBox="0 0 48 48"><path d="M12 4h17l9 9v31H12z" fill="#fff"/><path d="M29 4v9h9M18 24h14M18 31h14"/></svg><h3>VELLUM Document Studio</h3><p>A full PDF editor in one HTML file: annotate, manage pages and export, built with pdf.js, pdf-lib and Fabric.js.</p><span class="tag">PDF</span><span class="tag">Fabric.js</span><span class="tag">pdf-lib</span><br></div>
+    <div class="card rv"><span class="num">05</span><svg class="ic k" viewBox="0 0 48 48"><rect x="8" y="14" width="32" height="26" rx="9" fill="#9db3ff"/><path d="M24 14V8"/><circle cx="24" cy="6" r="2.5" fill="#ff5a36"/><circle cx="17" cy="26" r="3.5" fill="#fff"/><circle cx="31" cy="26" r="3.5" fill="#fff"/><path d="M18 34h12"/></svg><h3>Personal AI Assistant</h3><p>A personal assistant written in Python with persistent memory, powered by the Gemini API.</p><span class="tag">Python</span><span class="tag">Gemini API</span><br></div>
+    <div class="card rv"><span class="num">06</span><svg class="ic k" viewBox="0 0 48 48"><rect x="6" y="9" width="36" height="34" rx="8" fill="#ffd23f"/><path d="M6 19h36M15 4v9M33 4v9"/><rect x="13" y="25" width="7" height="7" rx="2" fill="#fff"/><rect x="26" y="25" width="7" height="7" rx="2" fill="#fff"/></svg><h3>Meridian Calendar</h3><p>A live calendar app in vanilla JavaScript with a dark UI, multiple views and event management.</p><span class="tag">JavaScript</span><span class="tag">Live</span><br><a href="https://meridiancalendar.netlify.app" target="_blank" rel="noopener">Live demo ↗</a></div>
+    <div class="card rv"><span class="num">07</span><svg class="ic k" viewBox="0 0 48 48"><path d="M16 24h16"/><rect x="5" y="14" width="9" height="20" rx="3" fill="#ff5a36"/><rect x="34" y="14" width="9" height="20" rx="3" fill="#ff5a36"/><path d="M14 20v8M34 20v8"/></svg><h3>APEX</h3><p>A minimalist fitness tracker, plus APEX Pong, a Pygame game with an AI opponent.</p><span class="tag">Python</span><span class="tag">Pygame</span><span class="tag">Game Dev</span><br></div>
+    <div class="card rv"><span class="num">08</span><svg class="ic k" viewBox="0 0 48 48"><circle cx="20" cy="20" r="13" fill="#ffd23f"/><path d="M30 30l13 13"/></svg><h3>RIVEN</h3><p>A search engine concept site with custom branding, a bold hero section and mock search.</p><span class="tag">Branding</span><span class="tag">Web Design</span><br></div>
+  </div>
+</section>
+
+<section id="skills" class="rv">
+  <h2>My <mark>toolkit.</mark></h2>
+  <div class="pills"><span style="--d:0">HTML</span><span style="--d:1">CSS</span><span style="--d:2">JavaScript</span><span style="--d:3">UI Design</span><span style="--d:4">Python</span><span style="--d:6">AI &amp; APIs</span><span style="--d:7">Computer Vision</span><span style="--d:5">Git &amp; GitHub</span></div>
+</section>
+
+<section id="contact" class="rv">
+  <h2>Let’s <mark>connect.</mark></h2>
+  <div class="links"><a class="mag" href="https://github.com/ArshNehal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>GitHub ↗</a><a class="mag" href="https://www.linkedin.com/in/arsh-nehal/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect width="24" height="24" rx="5" fill="#0a66c2"/><text x="12" y="18" text-anchor="middle" font-family="Arial,sans-serif" font-weight="800" font-size="14" fill="#fff">in</text></svg>LinkedIn ↗</a><a class="mag" href="https://www.youtube.com/@Arsh_Nehal" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="1" y="4.5" width="22" height="15" rx="4.5" fill="#f00"/><path d="M10 8.8l5.2 3.2-5.2 3.2z" fill="#fff"/></svg>YouTube ↗</a><a class="mag" href="https://www.reddit.com/user/k_code_r/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#ff4500"/><ellipse cx="12" cy="14" rx="6.5" ry="4.5" fill="#fff"/><circle cx="9.5" cy="13.5" r="1.1" fill="#ff4500"/><circle cx="14.5" cy="13.5" r="1.1" fill="#ff4500"/><path d="M9.5 16.3c1.6 1 3.4 1 5 0" stroke="#ff4500" fill="none" stroke-width="1" stroke-linecap="round"/><circle cx="17" cy="6" r="1.6" fill="#fff"/><path d="M12 8.5l1-4 4 1" stroke="#fff" fill="none" stroke-width="1"/></svg>Reddit ↗</a><a class="mag" href="mailto:arshnehal17@gmail.com"><svg viewBox="0 0 24 24"><rect x="1.5" y="4" width="21" height="16" rx="3" fill="#fff" stroke="#12121a" stroke-width="1.6"/><path d="M2.5 6.5l9.5 7.5 9.5-7.5" fill="none" stroke="#ea4335" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Email ↗</a></div>
+</section>
+<footer>Made with <svg class="k" viewBox="0 0 48 48" style="width:1.1em;height:1.1em;vertical-align:-.2em"><path d="M24 42S6 31 6 18a9 9 0 0 1 18-3 9 9 0 0 1 18 3c0 13-18 24-18 24z" fill="#ff5a36"/></svg> and a lot of JavaScript · Arsh Nehal · 2026</footer>
+
+<script>
+var i=0;document.querySelectorAll('#name .w').forEach(function(w){var s=w.textContent;w.textContent='';s.split('').forEach(function(c){var e=document.createElement('span');e.className='ch';e.style.setProperty('--i',i++);e.textContent=c;w.appendChild(e)})});
+addEventListener('load',function(){setTimeout(function(){document.getElementById('pre').classList.add('go')},800)});
+addEventListener('scroll',function(){var h=document.documentElement;document.getElementById('bar').style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%'});
+// liquid cursor
+var goo=document.getElementById('goo'),dots=[],N=14,mx=-100,my=-100;
+for(var q=0;q<N;q++){var d=document.createElement('i'),sz=Math.max(7,26-q*1.5);d.style.width=d.style.height=sz+'px';d.sz=sz;d.x=-100;d.y=-100;goo.appendChild(d);dots.push(d)}
+addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY});
+(function liq(){var px=mx,py=my;dots.forEach(function(d,k){d.x+=(px-d.x)*(k?.42:.32);d.y+=(py-d.y)*(k?.42:.32);d.style.transform='translate('+(d.x-d.sz/2)+'px,'+(d.y-d.sz/2)+'px)';px=d.x;py=d.y});requestAnimationFrame(liq)})();
+// click confetti
+var cols=['#2f4bff','#ff5a36','#c6f432','#ff9ecb','#12121a'];
+addEventListener('click',function(e){for(var k=0;k<22;k++){var c=document.createElement('i');c.className='conf';c.style.background=cols[k%5];c.style.left=e.clientX+'px';c.style.top=e.clientY+'px';document.body.appendChild(c);var a=Math.random()*6.28,d=60+Math.random()*120;c.animate([{transform:'translate(0,0) rotate(0)',opacity:1},{transform:'translate('+Math.cos(a)*d+'px,'+(Math.sin(a)*d+80)+'px) rotate('+Math.random()*720+'deg)',opacity:0}],{duration:900+Math.random()*400,easing:'cubic-bezier(.2,.8,.2,1)'}).onfinish=(function(x){return function(){x.remove()}})(c)}});
+// magnetic
+document.querySelectorAll('.mag').forEach(function(b){
+ b.addEventListener('mousemove',function(e){var r=b.getBoundingClientRect();b.style.transform='translate('+((e.clientX-r.left-r.width/2)*.2)+'px,'+((e.clientY-r.top-r.height/2)*.3)+'px)'});
+ b.addEventListener('mouseleave',function(){b.style.transform=''})});
+// typing
+var words=['Young coder','Web app builder','AI experimenter','Always learning'],wi=0,ci=0,del=false,t=document.getElementById('t');
+function ty(){var w=words[wi];t.textContent=w.slice(0,ci);
+ if(!del&&ci<w.length){ci++;setTimeout(ty,85)}else if(!del){del=true;setTimeout(ty,1300)}else if(ci>0){ci--;setTimeout(ty,40)}else{del=false;wi=(wi+1)%words.length;setTimeout(ty,250)}}setTimeout(ty,2000);
+// reveal + counters
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');e.target.querySelectorAll('[data-n]').forEach(count);io.unobserve(e.target)}})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(function(el,k){el.style.transitionDelay=(k%3)*0.12+'s';io.observe(el)});
+function count(el){var n=+el.dataset.n,s=el.dataset.s||'',c=0,st=Math.max(1,n/40);var id=setInterval(function(){c+=st;if(c>=n){c=n;clearInterval(id)}el.textContent=Math.round(c)+s},35)}
+// card tilt
+document.querySelectorAll('.card').forEach(function(c){
+ c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;
+  c.style.setProperty('--x',x+'px');c.style.setProperty('--y',y+'px');
+  c.style.transform='perspective(800px) rotateX('+((y/r.height-.5)*-9)+'deg) rotateY('+((x/r.width-.5)*9)+'deg) translate(-3px,-6px)'});
+ c.addEventListener('mouseleave',function(){c.style.transform=''})});
+// parallax floaters
+addEventListener('scroll',function(){document.querySelectorAll('.fl').forEach(function(f,k){f.style.translate='0 '+(scrollY*(.1+k*.06))+'px'})});
+</script>
+</body>
+</html>
